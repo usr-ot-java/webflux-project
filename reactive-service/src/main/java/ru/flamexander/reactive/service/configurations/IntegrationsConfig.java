@@ -18,7 +18,7 @@ public class IntegrationsConfig {
         WebClient.Builder builder = WebClient.builder();
         HttpClient httpClient = HttpClient.create();
         httpClient
-                .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 2000)
+                .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 1)
                 .doOnConnected(it -> it
                         .addHandlerLast(new WriteTimeoutHandler(2500, TimeUnit.MILLISECONDS))
                         .addHandlerLast(new ReadTimeoutHandler(30000, TimeUnit.MILLISECONDS))
